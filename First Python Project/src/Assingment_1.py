@@ -25,16 +25,16 @@ table="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 # Loop to keep prompting user for input until valid input is achieved
 while(0==0):
     text=input("Enter your plain text to be encrypted (text only please!): ")
-    # For some reason, using the input function in the pydev IDE results
-    # in the addition of a '\r' at the end of the input, so we have to 
-    # remove that or it'll mess up our code
+    # For some reason, my computer or keyboard produces a '\r' in 
+    # The end of the input string when using the input function, so 
+    # I'm removing it so it doesn't affect the output on my computer
     # Also convert to lowercase so upper cases don't ruin the program
     text=text.replace("\r","").lower()
     if(check_validity(text)==True):
         break
 while(0==0):
     key=input("Enter encryption key (any text): ")
-    key=key[:-1].lower()
+    key=key.replace("\r","").lower()
     if(check_validity(key)==True):
         break
 output=""
