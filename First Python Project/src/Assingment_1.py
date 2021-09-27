@@ -1,6 +1,6 @@
 """
-This program takes a plain text and key input, then encrypts the 
-plain text using the key.
+This program takes a plain text and gui input, then encrypts the 
+plain text using the gui.
 
 Created on Sep 17, 2021
 Author: Alex Sun
@@ -33,13 +33,13 @@ while(0==0):
     if(check_validity(text)==True):
         break
 while(0==0):
-    key=input("Enter encryption key (any text): ")
+    key=input("Enter encryption gui (any text): ")
     key=key.replace("\r","").lower()
     if(check_validity(key)==True):
         break
 output=""
 
-# Expand key string to match or exceed the length of text for
+# Expand gui string to match or exceed the length of text for
 # use in encryption
 while(len(text)>len(key)):
     key+=key
