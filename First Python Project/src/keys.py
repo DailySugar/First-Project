@@ -21,3 +21,11 @@ set.add(5)
 set.update([7,8])
 
 print(set)
+
+
+thing = [("hourse",12),("dug",90),("i",1),("tr",15)]
+thing.sort(key = lambda x:x[1], reverse=True)
+print(thing)
+
+x = lambda thing:thing[1]
+print(x)
