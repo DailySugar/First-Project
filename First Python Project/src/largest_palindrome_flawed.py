@@ -1,4 +1,4 @@
-digits=5
+digits=3
 num=(10**(digits)-1)**2
 
 def get_palindrome(num):
@@ -20,13 +20,13 @@ def get_palindrome(num):
 def test_multiples(num, digits):
     """Returns true if the given number is a product of two numbers 
     with given digits"""
-    start,end=10**(digits-1),10**(digits)-1
+    start, end = 10 ** (digits-1) ,10**(digits)-1
     for x in range(start,end):
-        if num%x==0 and len(str(num//x))==digits:
-            print(x,num/x)
+        if num % x == 0 and len(str(num//x))==digits:
+            print(x, num/x)
             return True
         #print(x,num/x)
     return False
 
 #print(test_multiples(100,2))
-print(get_palindrome(num))
+print(get_palindrome(1000100))
