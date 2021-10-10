@@ -25,4 +25,4 @@ def largest_palindrome(digits, num = 0, num2 = 0):
 
 
 #print(next_palindrome(997798))
-print(largest_palindrome(3, 10001, 999))
+print(largest_palindrome(3))
