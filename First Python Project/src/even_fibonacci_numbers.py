@@ -22,4 +22,4 @@ while curr<num:
 print(ans)
 
 stop = timeit.default_timer()
-print(stop-start)
+print(stop - start)
