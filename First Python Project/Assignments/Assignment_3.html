@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Assignment_3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Assignment_3</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Calexs%5Cpycharmprojects%5Cfirst-project%5Cfirst%20python%20project%5Cassignments%5Cassignment_3.py">c:\users\alexs\pycharmprojects\first-project\first python project\assignments\assignment_3.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Oct&nbsp;13,&nbsp;2021<br>
+Author:&nbsp;Alex&nbsp;Sun<br>
+Student&nbsp;Number:&nbsp;20289530<br>
+CISC-121<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;uses&nbsp;the&nbsp;Jaccard&nbsp;Similarity&nbsp;measure&nbsp;to&nbsp;determine<br>
+which&nbsp;document&nbsp;has&nbsp;the&nbsp;greatest&nbsp;similarity&nbsp;to&nbsp;a&nbsp;specified&nbsp;document.<br>
+&nbsp;<br>
+All&nbsp;of&nbsp;this&nbsp;work&nbsp;is&nbsp;mine,&nbsp;and&nbsp;any&nbsp;methods&nbsp;or&nbsp;ideas&nbsp;borrowed&nbsp;are<br>
+referenced&nbsp;above&nbsp;such&nbsp;code.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="tkinter.filedialog.html">tkinter.filedialog</a><br>
+<a href="glob.html">glob</a><br>
+</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="tkinter.html">tkinter</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_words"><strong>get_words</strong></a>(file)</dt><dd><tt>Parameter:&nbsp;String<br>
+Returns:&nbsp;List&nbsp;of&nbsp;strings&nbsp;(Each&nbsp;string&nbsp;is&nbsp;a&nbsp;word&nbsp;in&nbsp;the&nbsp;file)<br>
+Description:&nbsp;Gets&nbsp;and&nbsp;processes&nbsp;all&nbsp;the&nbsp;words&nbsp;in&nbsp;the&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-j_s"><strong>j_s</strong></a>(count_dict1, count_dict2)</dt><dd><tt>Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count_dict1:&nbsp;Dictionary<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count_dict2:&nbsp;Dictionary<br>
+Returns:&nbsp;Float<br>
+Description:&nbsp;Takes&nbsp;two&nbsp;word&nbsp;counts&nbsp;and&nbsp;runs&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Jaccard&nbsp;Similarity&nbsp;Measure&nbsp;on&nbsp;them.</tt></dd></dl>
+ <dl><dt><a name="-jaccard_similarity"><strong>jaccard_similarity</strong></a>(files)</dt><dd><tt>Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;files:&nbsp;List&nbsp;of&nbsp;strings<br>
+Returns:&nbsp;List&nbsp;of&nbsp;lists<br>
+Description:&nbsp;Main&nbsp;function.&nbsp;calls&nbsp;all&nbsp;other&nbsp;functions&nbsp;to&nbsp;handle&nbsp;the&nbsp;files&nbsp;inputted,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;each&nbsp;book,&nbsp;with&nbsp;its&nbsp;most&nbsp;similar&nbsp;book,&nbsp;and&nbsp;the&nbsp;similarity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number.</tt></dd></dl>
+ <dl><dt><a name="-letters_only"><strong>letters_only</strong></a>(string)</dt><dd><tt>Parameter:&nbsp;String<br>
+Returns:&nbsp;String<br>
+Description:&nbsp;Converts&nbsp;to&nbsp;lower&nbsp;case&nbsp;and&nbsp;removes&nbsp;non-letter&nbsp;components.</tt></dd></dl>
+ <dl><dt><a name="-word_count"><strong>word_count</strong></a>(words)</dt><dd><tt>Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;words:&nbsp;List&nbsp;of&nbsp;strings<br>
+Returns:&nbsp;Dictionary<br>
+Description:&nbsp;Returns&nbsp;the&nbsp;#&nbsp;of&nbsp;appearances&nbsp;of&nbsp;each&nbsp;word<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;words,&nbsp;excluding&nbsp;words&nbsp;which&nbsp;are&nbsp;either&nbsp;in&nbsp;stop_words,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;words&nbsp;which&nbsp;appear&nbsp;less&nbsp;than&nbsp;5&nbsp;times.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__warningregistry__</strong> = {'version': 0}<br>
+<strong>folder_directory</strong> = 'C:/Users/alexs/Downloads/test'<br>
+<strong>j</strong> = ['Wonder_Tales_Tibet.txt', 'Wonderful_Wizard_Oz.txt', 0.391304347826087]<br>
+<strong>n</strong> = 26<br>
+<strong>output</strong> = [['Adventures_Sherlock_Holmes.txt', 'Age_Innocence.txt', 0.40783490731024835], ['Age_Innocence.txt', 'Adventures_Sherlock_Holmes.txt', 0.40783490731024835], ['Alice_Wonderland.txt', 'Wonderful_Wizard_Oz.txt', 0.3348623853211009], ['Flint_Feather.txt', 'Legends_Vancouver.txt', 0.3506012950971323], ['Folk_Stories_Southern_Nigeria.txt', 'Indian_Fairy_Tales.txt', 0.3314886552296624], ['Indian_Fairy_Tales.txt', 'Wonder_Tales_Tibet.txt', 0.3333333333333333], ['Jane_Eyre.txt', 'Age_Innocence.txt', 0.38266871165644173], ['Journey_Centre_Earth.txt', 'Adventures_Sherlock_Holmes.txt', 0.3489420742282345], ['Legends_Vancouver.txt', 'Moccasin_Maker.txt', 0.3572395128552097], ['LMM_Short_Stories_1.txt', 'LMM_Short_Stories_2.txt', 0.44933920704845814], ['LMM_Short_Stories_2.txt', 'LMM_Short_Stories_1.txt', 0.44933920704845814], ['Moccasin_Maker.txt', 'LMM_Short_Stories_1.txt', 0.38181818181818183], ['Myths_Legends_China.txt', 'Myths_Legends_Japan.txt', 0.3926182809016596], ['Myths_Legends_Japan.txt', 'Myths_Legends_China.txt', 0.3926182809016596], ['Narrative_Frederick_Douglass.txt', 'Wonder_Tales_Tibet.txt', 0.3076358296622614], ['Poirot_Investigates.txt', 'Adventures_Sherlock_Holmes.txt', 0.3766454352441614], ['Pride_Prejudice.txt', 'Jane_Eyre.txt', 0.37547795054804994], ['Prophet.txt', 'Flint_Feather.txt', 0.2457627118644068], ['Secret_Garden.txt', 'LMM_Short_Stories_1.txt', 0.36852791878172586], ['Siddhartha.txt', 'Wonder_Tales_Tibet.txt', 0.35912052117263843], ...]<br>
+<strong>path</strong> = r'C:\Users\alexs\Downloads'<br>
+<strong>stop_words</strong> = ['a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', "aren't", 'as', 'at', 'be', 'because', 'been', 'before', 'being', ...]<br>
+<strong>txt_files</strong> = [r'C:/Users/alexs/Downloads/test\Adventures_Sherlock_Holmes.txt', r'C:/Users/alexs/Downloads/test\Age_Innocence.txt', r'C:/Users/alexs/Downloads/test\Alice_Wonderland.txt', r'C:/Users/alexs/Downloads/test\Flint_Feather.txt', r'C:/Users/alexs/Downloads/test\Folk_Stories_Southern_Nigeria.txt', r'C:/Users/alexs/Downloads/test\Indian_Fairy_Tales.txt', r'C:/Users/alexs/Downloads/test\Jane_Eyre.txt', r'C:/Users/alexs/Downloads/test\Journey_Centre_Earth.txt', r'C:/Users/alexs/Downloads/test\Legends_Vancouver.txt', r'C:/Users/alexs/Downloads/test\LMM_Short_Stories_1.txt', r'C:/Users/alexs/Downloads/test\LMM_Short_Stories_2.txt', r'C:/Users/alexs/Downloads/test\Moccasin_Maker.txt', r'C:/Users/alexs/Downloads/test\Myths_Legends_China.txt', r'C:/Users/alexs/Downloads/test\Myths_Legends_Japan.txt', r'C:/Users/alexs/Downloads/test\Narrative_Frederick_Douglass.txt', r'C:/Users/alexs/Downloads/test\Poirot_Investigates.txt', r'C:/Users/alexs/Downloads/test\Pride_Prejudice.txt', r'C:/Users/alexs/Downloads/test\Prophet.txt', r'C:/Users/alexs/Downloads/test\Secret_Garden.txt', r'C:/Users/alexs/Downloads/test\Siddhartha.txt', ...]</td></tr></table>
+</body></html>
