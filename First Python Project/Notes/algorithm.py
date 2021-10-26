@@ -13,7 +13,6 @@ import random
 # Sorting functions
 # Merge Sort: split into two equal sides and sort both sides, then merge both sides
 def m_s(list, start, end):
-    print(list[start], list[end])
     if start > end:
         return []
     elif start == end:
@@ -21,23 +20,28 @@ def m_s(list, start, end):
     elif end - start == 1:
         return [list[start], list[end]] if list[start] < list[end] else [list[end], list[start]]
     else:
-        left = m_s(list, start, (start + end) // 2)
-        right = m_s(list, (start + end) // 2, end)
+        left = m_s(list, start, (start + end - 1) // 2)
+        right = m_s(list, (start + end + 1) // 2, end)
+        # print(left,right)
         new_list = []
-        for x in left:
-            if x < right[0]:
-                new_list.append(x)
+        while len(left) != 0 and len(right) != 0:
+            if left[0] < right[0]:
+                new_list.append(left[0])
+                left.pop(0)
             else:
                 new_list.append(right[0])
                 right.pop(0)
-        return new_list + right
+        if len(right) == 0:
+            return new_list + left
+        else:
+            return new_list + right
 
 
 def merge_sort(list):
     return m_s(list, 0, len(list) - 1)
 
 
-print(merge_sort([1,5,8,1]))
+print(merge_sort([1,5,8,1,5,9,1,2,4,324,234,234,423,35,73,2,1,423,3,5,263,4,512,4,123,125,132,421,5,63,47,24,1,32,2,56]))
 
 # October 21, 2021
 # Binary search

@@ -1,24 +1,41 @@
-def equal_num_occurence(list_a, list_b, target):
-    if len(list_a) != 0 and len(list_b) != 0:
-        occur_a = 0
-        occur_b = 0
-        for x in list_a:
-            if x == target:
-                occur_a += 1
-        for x in list_b:
-            if x == target:
-                occur_b += 1
-        if occur_a == occur_b:
-            return True
-    return False
+import tkinter as tk
+#import and overwrite functions, or put * to import and overwrite all functions in tkinter
+#from tkinter import *
 
 
-def test_equal_num_occurence():
-    assert equal_num_occurence([],[],5) == False
-    assert equal_num_occurence([5], [], 5) == False
-    assert equal_num_occurence([3], [3,12], 3) == True
-    assert equal_num_occurence([1.2,6,5], [5, 3.9,14,7], 3) == True
-    assert equal_num_occurence([7.2,4,6,9.5,7.2], [-4,7.2,7.2], 7.2) == True
+window = tk.Tk()
+window.title("test")
+window.geometry("800x800")
+
+label_1=tk.Label(window,text="uwu")
+entry_1=tk.Entry(window,width=10)
+entry_2=tk.Entry(window,width=10)
+text_1=tk.Text(window,height=5,width=30)
 
 
-test_equal_num_occurence()
+def button_1_clicked():
+    text="abc"
+    key="z"
+    while(len(text)>len(key)):
+        key+=key
+    output=""
+    table="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    for x in range(len(text)):
+        output+=table[table.index(text[x])+table.index(key[x])]
+    print("\nYour encrypted text is:",output)
+
+button_1 = tk.Button(window,text="Enter",command = button_1_clicked)
+
+"""label_1.pack()
+entry_1.pack()
+text_1.pack()
+button_1.pack()"""
+
+
+label_1.grid(row=0,column=0)
+entry_1.grid(row=1,column=0)
+entry_2.grid(row=2,column=0)
+text_1.grid(row=1,column=1)
+button_1.grid(row=2,column=2)
+window.mainloop()
+
