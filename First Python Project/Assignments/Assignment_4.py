@@ -71,7 +71,7 @@ def sublist_sum_rec(a_list, target):
     return False
 
 
-print(sublist_sum_rec([4, 3, 1, 2, 3, 15, 9, 3, 1, 7, 2, 4], 14))
+# print(sublist_sum_rec([4, 3, 1, 2, 3, 15, 9, 3, 1, 7, 2, 4], 14))
 
 # Problem 3:
 
@@ -89,11 +89,11 @@ def prime_factors(n):
 
 
 # example of use
-# prime_factors(126)
+# print(prime_factors(126))
 
 
-# def prime_factors_rec(n):
-#   you write this
+def prime_factors_rec(n):
+    return
 
 
 # Problem 4:

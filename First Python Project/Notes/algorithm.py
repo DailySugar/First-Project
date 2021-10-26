@@ -7,7 +7,20 @@
 # Wrote great math letter before dying in duel
 # The best science books are the ones which the authors make clear how much they don't know.
 
+# H.C - Hillary Clinton
+# "It's time for us to move on from good words to good works."
+
 import random
+# October 26, 2021
+# Anthony Hoare's quicksort
+# "If you had to think of a way to write something in a paper,
+#  or say something in a speech, how would you do it?"
+# "I would think of the way that I would say it, and that would be the best way."
+#
+# Choose a value from the list, and call it the pivot.
+# Start with first value in list as pivot.
+# Move all values > pivot to right hand side, and all values < pi to left hand side.
+#
 
 # October 25, 2021
 # Sorting functions
@@ -24,17 +37,19 @@ def m_s(list, start, end):
         right = m_s(list, (start + end + 1) // 2, end)
         # print(left,right)
         new_list = []
-        while len(left) != 0 and len(right) != 0:
-            if left[0] < right[0]:
-                new_list.append(left[0])
-                left.pop(0)
-            else:
-                new_list.append(right[0])
-                right.pop(0)
-        if len(right) == 0:
-            return new_list + left
-        else:
-            return new_list + right
+        while True:
+            try:
+                if left[0] < right[0]:
+                    new_list.append(left[0])
+                    left.pop(0)
+                else:
+                    new_list.append(right[0])
+                    right.pop(0)
+            except:
+                if len(left) == 0:
+                    return new_list + right
+                else:
+                    return new_list + left
 
 
 def merge_sort(list):
