@@ -88,6 +88,7 @@ def move_some(source, target, how_many):
     else:
         print("\t" * (5 - how_many), "Moving", how_many, "disks from peg", source, "to peg", target)
         other_peg = (3 - (source + target)) % 3
+        # print(source, other_peg)
         move_some(source, other_peg, how_many - 1)
         print("\t" * (5 - how_many), "Moving 1 disk from peg", source, "to peg", target)
         move_one(source, target)
