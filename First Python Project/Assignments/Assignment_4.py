@@ -31,7 +31,10 @@ def exponent(x, y):  # y is a positive integer
 def exponent_rec(x, y):
     """ Exponentiation by squaring, thanks to Dawes for the
     original idea, and wikipedia.org/wiki/Exponentiation_by_squaring
-    for a refresher. Also takes negative integers because I felt like it."""
+    for a refresher. Also takes negative integers because I felt like it.
+    I figured that implementing compatibility with decimal exponents would
+    require the usage of Newton's method or Taylor polynomials, but I'm curious
+    if there's another practical way?"""
     if y == 1:
         return x
     elif y == 0:
@@ -60,7 +63,7 @@ def sublist_sum(a_list, target):
 
 
 def sublist_sum_rec(a_list, target):
-    """ Same as sublist_sum, but recursive."""
+    """ Recursively determines the same output as sublist_sum."""
     # print(a_list)
     sum = 0
     for x in range(len(a_list)):
@@ -75,6 +78,8 @@ def sublist_sum_rec(a_list, target):
             elif sum > target:
                 try:
                     return sublist_sum_rec(a_list[1:], target)
+                # Reached end of list
+                # By the way, is it optimal to be using try-except like this?
                 except:
                     return False
     return False
@@ -96,7 +101,8 @@ def prime_factors(n):
 
 
 def pfr(n, candidate):
-    """ Recursive portion of prime_factors_rec."""
+    """ Recursive portion of prime_factors_rec. Same algorithm as
+    the above function, but done recursively."""
     if n != 1:
         if n % candidate == 0:
             print(candidate, " ", end="")
@@ -176,15 +182,15 @@ def collatz_rec(n):
 def better_collatz_rec(start, end, current_num, sequence_dict):
     """ This function stores the next part of the Collatz Sequence
     for all encountered integers to save time on calculating.
-    For example, when the next int after 5 (16) is found,
-    5 is stored as a reference to 16 in the dict for future
-    reference."""
+    For example, the next int after 5 is 16, so 5 is stored as
+    a reference to 16 in the dict for future reference."""
     if start == end:
         # print(sequence_dict)
         print()
         return
     else:
         if start == current_num:
+            # Print beginning sequence #
             print("\n" + str(start), " ", end="")
         if current_num in sequence_dict:
             while current_num != 1:
@@ -205,6 +211,7 @@ def better_collatz_rec(start, end, current_num, sequence_dict):
 
 
 def better_collatz_up_to_n(n):
+    """ Main calling function."""
     better_collatz_rec(1, n + 1, 1, {1:1})
 
 
@@ -226,7 +233,10 @@ path_dict = {}
 
 def better_count_routes(n):
     """ This version stores all previously found paths in path_dict.
-    The dictionary key is the length of the path."""
+    The dictionary key is the length of the path. Will calculate the
+    answer near instantly, but results in a stack overflow error
+    at higher numbers. Not sure how I'd fix that, considering how
+    this code works. Any ideas?"""
     try:
         return path_dict[n]
     except:
@@ -236,8 +246,11 @@ def better_count_routes(n):
             return 1
         else:
             path_dict[n] = better_count_routes(n - 2) + better_count_routes(n - 3)
+            # print(path_dict)
             return path_dict[n]
 
+
+# print(better_count_routes(2000))
 
 # Part 3
 
@@ -265,13 +278,23 @@ def binary_search_rec(a_list, target, first, last):
             return binary_search_rec(a_list, target, mid + 1, last)
 
 
-def bs(list, target):
+def binary_search_iterative(list, target):
     """ Not much to say here; it's just a non-recursive version of
     the above function."""
-    for x in range(len(list)):
-        if list[x] == target:
-            return x
-    return -1
+    end = len(list)
+    start = 0
+    try:
+        while start <= end:
+            mid = (end + start) // 2
+            if list[mid] == target:
+                return mid
+            elif list[mid] < target:
+                start = mid + 1
+            else:
+                end = mid - 1
+        return -1
+    except:
+        return -1
 
 
 # Problem 8
@@ -289,19 +312,16 @@ def gcd2(a, b):
     if a % b == 0:
         return b
     elif b % a == 0:
-         return a
+        return a
     else:
-        limit = 8 // 2
-        while limit >= 1:
-            if a % limit == 0 and b % limit == 0:
-                return limit
-            limit -= 1
+        greatest_multiple = a // 2
+        while greatest_multiple >= 1:
+            if a % greatest_multiple == 0 and b % greatest_multiple == 0:
+                return greatest_multiple
+            greatest_multiple -= 1
 
 
-def print_everything():
-    """ Prints out all of the problem outputs.
-    Easy to comment out."""
-
+if __name__ == "__main__":
     print("Problem 1:")
     # print(exponent(3, 7))
     print(exponent_rec(3, 7), "\n")
@@ -329,10 +349,8 @@ def print_everything():
 
     print("\nProblem 7:")
     # print(binary_search([4, 7, 12, 15, 23, 28, 33, 34, 35, 100, 5280, 5281], 100))
-    print(bs([4, 7, 12, 15, 23, 28, 33, 34, 35, 100, 5280, 5281], 100))
+    print(binary_search_iterative([4, 7, 12, 15, 23, 28, 33, 34, 35, 100, 5280, 5281], 100))
 
     print("\nProblem 8:")
     # print(gcd(8, 20))
     print(gcd2(8, 20))
-
-print_everything()
