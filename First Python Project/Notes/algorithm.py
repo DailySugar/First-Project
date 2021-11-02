@@ -1,3 +1,5 @@
+import random
+
 # Beatrice Wursley
 # First phd thesis on modern computers. Founded school of computing in Queens
 
@@ -10,8 +12,18 @@
 # H.C - Hillary Clinton
 # "It's time for us to move on from good words to good works."
 
-import random
-# October 26, 2021
+# D.C - Dale Carnigey
+# "People rarely succeed unless they're having fun with what they're doing."
+# Proto-humans scratched prime numbers into some old bone?
+
+# G.B - George Boole
+# "The course of the world is not abandoned to chance."
+
+# November 1, 2021      November 2, 2021
+# Time to compute - assume all basic operations take the same amount of time
+#
+
+# October 26, 2021      October 28, 2021
 # Anthony Hoare's quicksort
 # "If you had to think of a way to write something in a paper,
 #  or say something in a speech, how would you do it?"
@@ -19,8 +31,9 @@ import random
 #
 # Choose a value from the list, and call it the pivot.
 # Start with first value in list as pivot.
-# Move all values > pivot to right hand side, and all values < pi to left hand side.
+# Move all values > pivot to right hand side, and all values < pivot to left hand side.
 #
+
 
 # October 25, 2021
 # Sorting functions
