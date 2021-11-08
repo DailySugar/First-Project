@@ -19,9 +19,18 @@ import random
 # G.B - George Boole
 # "The course of the world is not abandoned to chance."
 
-# November 1, 2021      November 2, 2021
+# M.C. -
+# "Be less curious about people, and be more curious about ideas."
+
+# S.D - Shakuntala Davie - indian mathematician
+# "Everything around you is mathematics."
+
+# November 1, 2021      November 2, 2021        November 4, 2021        Nov 8
 # Time to compute - assume all basic operations take the same amount of time
-#
+# Focus on worst case time
+# Big O - Let f(n) & g(n) be functions
+# where f(n) is in Order(g(n))
+# Computational Complexity
 
 # October 26, 2021      October 28, 2021
 # Anthony Hoare's quicksort
