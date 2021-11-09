@@ -9,7 +9,7 @@ import math
 def check(num,lis):
     # Check if the # can be divided by something from the prime numbers database
     for y in lis:
-        if num%y==0:
+        if num % y == 0:
             return True
         if y > math.sqrt(num):
             return False
@@ -22,7 +22,7 @@ num=600851475143
 # numbers out there are ultimately divisible by prime numbers.
 nums=[2]
 # Without num+1, it'll only go up to 999 instead of 1000
-for x in range(3,num+1,2):
+for x in range(3,math.round(math.sqrt(num+1)),2):
     if check(x,nums):
         # Not prime, move onto next number
         continue

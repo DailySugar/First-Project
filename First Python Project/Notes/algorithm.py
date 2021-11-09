@@ -25,6 +25,16 @@ import random
 # S.D - Shakuntala Davie - indian mathematician
 # "Everything around you is mathematics."
 
+# I.L. - Imre Lakatos
+# Wrote proofs and rafutations - look for things that look like
+# patterns, and try to prove it. Fail, and try again, but with
+# the knowledge of why it failed.
+# "Blind commitment to a theory is an intellectual crime."
+
+# Nov 9
+
+#
+
 # November 1, 2021      November 2, 2021        November 4, 2021        Nov 8
 # Time to compute - assume all basic operations take the same amount of time
 # Focus on worst case time
