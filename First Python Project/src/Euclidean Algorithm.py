@@ -7,6 +7,6 @@ def gcd(a, b):
 
 
 start = timeit.default_timer()
-print(gcd(23981203823801200000, 120912893740912830912749812704703808888800000000000))
+print(gcd(62615533, 7907))
 stop = timeit.default_timer()
 print(stop - start)
