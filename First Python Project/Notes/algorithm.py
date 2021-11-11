@@ -31,8 +31,10 @@ import random
 # the knowledge of why it failed.
 # "Blind commitment to a theory is an intellectual crime."
 
-# Nov 9
+# K.V. - Kurtin Vardigas
+# "We are who we pretend to be."
 
+# Nov 9     Nov 11
 #
 
 # November 1, 2021      November 2, 2021        November 4, 2021        Nov 8
