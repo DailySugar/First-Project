@@ -34,6 +34,12 @@ import random
 # K.V. - Kurtin Vardigas
 # "We are who we pretend to be."
 
+# G.O. -
+# "I've been absolutely terrified at every moment in my life, but it hasn't stopped me from doing everything I like."
+
+# Nov 15
+#
+
 # Nov 9     Nov 11
 #
 
