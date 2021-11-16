@@ -37,6 +37,9 @@ import random
 # G.O. -
 # "I've been absolutely terrified at every moment in my life, but it hasn't stopped me from doing everything I like."
 
+# M.
+# "Mathematics is the same as music."
+
 # Nov 15
 #
 
