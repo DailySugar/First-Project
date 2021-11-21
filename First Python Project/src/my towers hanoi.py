@@ -3,7 +3,7 @@ import time
 
 
 pillars = 3
-rings = 10
+rings = 5
 puzzle = []
 for x in range(pillars):
     puzzle.insert(0, [])
@@ -20,7 +20,7 @@ def move(start, end):
                 print(y, end="   ")
             print()
         print("\n")
-        time.sleep(0.0001)
+        time.sleep(0.5)
     else:
         print("ERROR: ILLEGAL MOVE ATTEMPTED")
 
@@ -34,5 +34,5 @@ def move_multiple(start, end, count):
         move_multiple(pillars - start - end, end, count - 1)
 
 
-move_multiple(0, 2, 10)
+move_multiple(0, 2, 5)
 # print(puzzle)

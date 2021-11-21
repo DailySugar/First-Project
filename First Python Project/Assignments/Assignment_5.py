@@ -112,9 +112,10 @@ if __name__ == "__main__":
     print("Average time for quick sort:", total_time2 / runs)
     print("Radix sort was faster than quick sort", radix_sort_faster / runs * 100, "% of the time")
 
-""" Over 300 runs, radix sort had an average time of 6.2629 milliseconds,
-while quick sort had an average of 31.2338 milliseconds. Needless to say,
-my radix sort was much faster than my quick sort algorithm, which probably
-needs more optimization, but I'm not sure how to go about doing that."""
+""" Over 300 runs, radix sort was faster 100% of the time, and 
+had an average time of 6.2629 milliseconds, while quick sort had an average 
+of 31.2338 milliseconds. Needless to say, my radix sort was much faster 
+than my quick sort algorithm, which probably needs more optimization, 
+but I'm not sure how to go about doing that."""
 
 
