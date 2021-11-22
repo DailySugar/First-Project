@@ -31,8 +31,7 @@ def k_means(animals_table, group_count = 7):
     groups["unsorted"] = list(animals_dict.keys())
     for x in range(group_count):
         temp_animal = randint(0, animals_index_count)
-        groups[x] = [[temp_animal], animals_table[temp_animal]]
-        groups["unsorted"].remove(temp_animal)
+        groups[x] = [{temp_animal}, animals_table[temp_animal]]
     print(groups)
     return groups
     # for x in range(loops):
@@ -54,11 +53,11 @@ def manhattan_metric(animals_table, groups, loops = 10):
         for animal in range(len(animals_table)):
             # print("animal_attributes:", animal_attributes)
             differences = []
-            for compare in centers:
+            for compare in range(len(animals_table)):
                 # print("compare:          ", compare)
                 total_difference = 0
                 for attribute in range(len(animals_table[animal])):
-                    total_difference += abs(animals_table[animal][attribute] - compare[attribute])
+                    total_difference += abs(animals_table[animal][attribute] - groups[compare][attribute])
                 differences.append(total_difference)
                 # print("difference:",temp_differences)
             # print(differences)
