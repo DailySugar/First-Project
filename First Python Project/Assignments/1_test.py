@@ -1,5 +1,5 @@
-x = [1,2,3,4,5,6,7,8,9]
-y = {1,2,3,4,5,6,7,8,9}
+list = range(1,100)
 
-print(x + [1])
-print(y.union({9}))
+
+for x in list:
+    print(x)
