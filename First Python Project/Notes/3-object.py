@@ -1,6 +1,9 @@
 # C.L -
 # "Those who seek, find."
 
+# L.S
+# "I am one"
+
 # Nov 18    Nov 22
 # "self" is tricky
 
@@ -37,7 +40,7 @@ class super_hero(object):
 
 
     def __int__(self):
-        return 420
+        return 1337
 
 
     def get_allies(self):
@@ -46,4 +49,4 @@ class super_hero(object):
 
 hero_1 = super_hero(hero_name = "Potato")
 print(hero_1)
-print(hero_1 / hero_1)
+print(int(hero_1) / 2)

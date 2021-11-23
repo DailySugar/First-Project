@@ -27,11 +27,11 @@ def k_means(animals_table, group_count = 7):
     and groups of animal indexes will be kept track of in the
     group dictionary."""
     animals_index_count = len(animals_table) - 1
-    groups = {-1:set()}
+    groups = {"unsorted":set(range(0, animals_index_count + 1)), "sorted":set()}
     for x in range(group_count):
         temp_animal = randint(0, animals_index_count)
         groups[x] = [{temp_animal}, animals_table[temp_animal]]
-        groups[-1].add(temp_animal)
+        groups["sorted"].add(temp_animal)
     print("Initial Groups:", groups)
     return groups
     # for x in range(loops):
@@ -48,37 +48,36 @@ def smallest(differences):
     return differences.index(smallest)
 
 
-def manhattan_metric(animals_table, groups, loops = 10):
-    for x in range(loops):
-        for animal in range(len(animals_table)):
-            if animal in groups[-1]:
-                continue
-            # print("animal_attributes:", animal_attributes)
-            differences = []
-            for compare in range(len(groups)):
-                # print("compare:          ", compare)
-                total_difference = 0
-                for attribute in range(len(animals_table[animal])):
-                    total_difference += abs(animals_table[animal][attribute] - groups[compare][1][attribute])
-                differences.append(total_difference)
-                # print("difference:",temp_differences)
-            # print(differences)
-            groups[smallest(differences)][0].add(animal)
-        if x == 0:
-            groups[-1] = {}
-        print("Groups", groups)
-        print("Elements:", len(groups[0][0]) + len(groups[1][0]) + len(groups[2][0]) + len(groups[3][0]) + len(groups[4][0]) + len(groups[5][0]) + len(
-            groups[6][0]))
-        for y in range(len(groups)):
-            groups[y][0] = []
-        print("Groups post-clear:", groups)
+def manhattan_metric(animals_table, groups, loops = 10, group_count = 7):
+    unsorted = groups["unsorted"].difference(groups["sorted"])
+    # for x in range(loops):
+    for animal in unsorted:
+        # print("animal_attributes:", animal_attributes)
+        differences = []
+        for compare in range(group_count):
+            # print("compare:          ", compare)
+            total_difference = 0
+            for attribute in range(len(animals_table[animal])):
+                total_difference += abs(animals_table[animal][attribute] - groups[compare][1][attribute])
+            differences.append(total_difference)
+            # print("difference:",temp_differences)
+        # print(differences)
+        groups[smallest(differences)][0].add(animal)
+    print("Groups", groups)
+    print("Elements:", len(groups[0][0]) + len(groups[1][0]) + len(groups[2][0]) + len(groups[3][0]) + len(groups[4][0]) + len(groups[5][0]) + len(
+        groups[6][0]))
+    for y in range(len(groups)):
+        groups[y][0] = []
+    print("Groups post-clear:", groups)
+    if x == 0:
+        unsorted = groups[unsorted]
 
 
 def main():
     groups = k_means(animals_table, 7)
-    # print(manhattan_metric(animals_table, groups, 10))
-    print(animals_table[10])
-    print(animals_table[49])
+    print(manhattan_metric(animals_table, groups, 10))
+    # print(animals_table[10])
+    # print(animals_table[49])
 
 
 main()
