@@ -1,11 +1,13 @@
 # C.L -
 # "Those who seek, find."
 
-# L.S
-# "I am one"
+# L.S - Louisa Strong - wrote alot about Joseph Stalin
+# "I am one of those who never knows the destination of their journey until they have arrived."
 
 # Nov 18    Nov 22
 # "self" is tricky
+# Class attributes and functions
+# Instance attributes and functions
 
 class super_hero(object):
     # class variables
@@ -47,6 +49,27 @@ class super_hero(object):
         return self.allies
 
 
-hero_1 = super_hero(hero_name = "Potato")
-print(hero_1)
-print(int(hero_1) / 2)
+# hero_1 = super_hero(hero_name = "Potato")
+# print(hero_1)
+# print(int(hero_1) / 2)
+
+
+class Forest():
+    var_1 = 4
+
+
+class Park():
+    var_2 = 9
+
+
+class GovProp():
+    var_1 = 10
+
+
+class ProvPark(GovProp, Forest, Park):
+    # If there's conflicting variables, it'll pick the value from the first class listed
+    pass
+
+
+pp1 = ProvPark()
+print(pp1.var_2)
