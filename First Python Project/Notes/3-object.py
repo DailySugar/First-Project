@@ -75,10 +75,10 @@ class super_hero(object):
         return self.allies
 
 
-hero_1 = super_hero(hero_name = "Potato")
-hero_2 = super_hero(hero_name = "Potato")
-print(hero_1 == hero_2)
-print(int(hero_1) / 2)
+# hero_1 = super_hero(hero_name = "Potato")
+# hero_2 = super_hero(hero_name = "Potato")
+# print(hero_1 == hero_2)
+# print(int(hero_1) / 2)
 
 
 class Forest():
@@ -100,3 +100,33 @@ class ProvPark(GovProp, Forest, Park):
 
 # pp1 = ProvPark()
 # print(pp1.var_2)
+
+
+# Data encapsulation: hiding information (double underscore before variable name hides it?
+# Apparently doesn't work on python.
+class c1():
+
+    __counter = ()
+
+    def get_counter():
+        return c1.__counter
+
+
+    def __init__(self, value):
+        self.__x = value
+        c1.__counter += 1
+
+
+    def get_x(self):
+        return self.__x
+
+
+    def set_x(self, value):
+        self.__x = value
+
+
+thing1 = c1(5)
+print(thing1.get_x())
+
+
+
