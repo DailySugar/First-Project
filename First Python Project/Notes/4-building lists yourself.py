@@ -4,6 +4,14 @@
 # W.C. - Winston Churchill
 # "The empires of the future will be the empires of the mind."
 
+# R.D - Robertson Davies
+# "Art lies in understanding some part of the dark forces, and
+# bringing them under the control of reason"
+
+# Sorites Paradox remove a dollar from a wealthy person, and they're still wealthy, right?
+# But keep removing a dollar, and eventually they'll have $0.
+# When do they cease being wealthy? Fuzzy Logic.
+
 # Nov 29
 class ListNode():
     def __init__(self, value):
@@ -20,6 +28,22 @@ class linked_list():
 
     def __len__(self):
         return self.counter
+
+
+    def __iter__(self):
+        """Initiallize iterator"""
+        self.current = self.head
+        return self
+
+
+    def __next__(self):
+        """Advance iterator to next element in list"""
+        if self.current == None:
+            raise StopIteration
+        else:
+            return_val = self.current.value
+            self.current = self.current.next
+            return return_val
 
 
     def append(self, x):
@@ -44,4 +68,7 @@ list = linked_list()
 list.append(1)
 list.append(2)
 list.append(3)
-print(list[0])
+# print(list)
+
+for x in list:
+    print(x)
